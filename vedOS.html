@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vedOS - Modern Web OS</title>
+  <link rel="stylesheet" href="vedOS.css">
+</head>
+<body>
+  <!-- Boot Screen -->
+  <div id="boot-screen" class="screen">
+    <h1>🔵 Booting vedOS...</h1>
+    <p>Powered by Vedant ©2025</p>
+  </div>
+
+  <!-- Login Screen -->
+  <div id="login-screen" class="screen">
+    <div class="login-box">
+      <h2>Welcome to vedOS</h2>
+      <input type="text" id="username" placeholder="Enter username" />
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop" class="screen">
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <div id="start">🔵 vedOS</div>
+      <div id="clock"></div>
+    </div>
+
+    <!-- Icons -->
+    <div class="icon" data-app="notepad">📝<br/>Notepad</div>
+    <div class="icon" data-app="terminal">💻<br/>Terminal</div>
+    <div class="icon" data-app="browser">🌐<br/>Browser</div>
+    <div class="icon" onclick="shutdown()">⚙️<br/>Shutdown</div>
+
+    <!-- App Windows -->
+    <div id="notepad" class="window">
+      <div class="title-bar">📝 Notepad <span class="close">X</span></div>
+      <textarea placeholder="Type something..."></textarea>
+    </div>
+
+    <div id="terminal" class="window">
+      <div class="title-bar">💻 Terminal <span class="close">X</span></div>
+      <div class="terminal-body">
+        <div class="output">User@vedOS:~$ Welcome to vedOS Terminal!</div>
+        <input type="text" class="terminal-input" placeholder="Enter a command...">
+      </div>
+    </div>
+
+    <div id="browser" class="window">
+      <div class="title-bar">🌐 Browser <span class="close">X</span></div>
+      <div class="browser-body">
+        <input type="text" id="searchQuery" placeholder="Search the web...">
+        <button onclick="performSearch()">Search</button>
+        <iframe id="browser-frame" srcdoc="<p>Welcome to vedOS Browser</p>"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shutdown Screen -->
+  <div id="shutdown-screen" class="screen">
+    <h1>vedOS is shutting down...</h1>
+  </div>
+
+  <script src="vedOS.js"></script>
+</body>
+</html>
